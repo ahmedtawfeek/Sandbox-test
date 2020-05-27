@@ -3,13 +3,11 @@
 # failover.yml
 
 # enforce that the primary environment is shut-down because maybe only one of the components is not available but, ignore if we can't connect to them as the server might not be available
-- hosts: go-server-primary
+- hosts: go-server-standby
   gather_facts: no
   ignore_unreachable: true
   tasks:
-    - name:  the primary go-server
-      command: sudo /etc/init.d/go-server status
-
-    - name:  the primary go-server
-      command: echo "present time in cairo $date"
+    - name: get timestamp from the system
+      shell: "date +%Y%m%d%H%M"
+      register: tstamp
 
