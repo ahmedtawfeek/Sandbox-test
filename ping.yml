@@ -3,7 +3,7 @@
 # failover.yml
 
 # enforce that the primary environment is shut-down because maybe only one of the components is not available but, ignore if we can't connect to them as the server might not be available
-- hosts: sandboxtest
+- hosts: hosts
   gather_facts: no
   ignore_unreachable: true
   tasks:
