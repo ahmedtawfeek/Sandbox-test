@@ -1,20 +1,3 @@
 ---
-[go-server-primary]
-goserver1       ansible_user=goadmin
-
 [go-server-standby]
 goserver2       ansible_user=goadmin
-
-[postgres-primary]
-dbserver1       ansible_user=weloadm
-
-[postgres-standby]
-dbserver2       ansible_user=weloadm
-
-[go-servers]
-goserver1       ansible_user=goadmin default=primary
-goserver2       ansible_user=goadmin default=standby
-
-[postgres-servers]
-dbserver1       ansible_user=weloadm default=primary
-dbserver2       ansible_user=weloadm default=standby
