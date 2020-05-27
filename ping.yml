@@ -7,7 +7,9 @@
   gather_facts: no
   ignore_unreachable: true
   tasks:
-    - name: stop the primary go-server
+    - name:  the primary go-server
       command: sudo /etc/init.d/go-server status
-      register: current_rc_1
-      failed_when: current_rc_1.rc > 1
+
+    - name:  the primary go-server
+      command: echo "present time in cairo $date"
+
